@@ -59,37 +59,6 @@ void LcdPrint(int Percentage, int Value)
   lcd.print(Value);
 }
 
-/**********************************************************/
-
-void setup()
-{
-  lcd.init();
-  lcd.backlight();
-  Serial.begin(9600);
-}
-
-void loop()
-{
-  Moisture_Value = Calculate_Moist_Value(20, 100);
-
-  if (Moisture_Value != Prev_Moisture_Value)
-  {
-    Moisture_Percentage = Calculate_Moisture(Moisture_Value);
-    //LcdPrint(Moisture_Percentage, Moisture_Value);
-
-    Prev_Moisture_Value = Moisture_Value;
-  }
-
-  readSerialPort();
-  if (msg != "")
-  {
-    Serial.print("recieved: ");
-    Serial.print(msg);
-    sendData();
-  }
-  //delay(500);
-}
-
 void readSerialPort()
 {
   msg = "";
@@ -98,13 +67,15 @@ void readSerialPort()
   {
     msg += (char)Serial.read();
     Serial.flush();
-  }
+    
+    if ( msg == nom ) {
+      Serial.println("OOOOOOOOOOOKKKKKK");
+      Serial.println(nom);
+    }
   
-  Serial.print(msg);
-  if ( msg == nom ) {
-    Serial.println("OOOOOOOOOOOKKKKKK");
-    Serial.println(nom);
   }
+
+
 
 }
 void sendData()
@@ -120,3 +91,34 @@ void sendData()
     Serial.print(Moisture_Percentage);
   }
 }
+/**********************************************************/
+
+void setup()
+{
+  lcd.init();
+  lcd.backlight();
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  //  Moisture_Value = Calculate_Moist_Value(20, 100);
+  //
+  //  if (Moisture_Value != Prev_Moisture_Value)
+  //  {
+  //    Moisture_Percentage = Calculate_Moisture(Moisture_Value);
+  //    //LcdPrint(Moisture_Percentage, Moisture_Value);
+  //
+  //    Prev_Moisture_Value = Moisture_Value;
+  //  }
+
+  readSerialPort();
+  if (msg != "")
+  {
+    Serial.print("recieved: ");
+    Serial.print(msg);
+    sendData();
+  }
+  delay(500);
+}
+
