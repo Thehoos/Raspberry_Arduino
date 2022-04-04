@@ -64,12 +64,12 @@ void readSerialPort()
   delay(10);
   if (Serial.available()) {
 
-    while (Serial.available() > 1)
+    while (Serial.available() > 0)
     {
       msg += (char)Serial.read();
       Serial.flush();
     }
-    char x = (char)Serial.read();
+    //char x = (char)Serial.read();
 //    Serial.print("'");
 //    Serial.print(x, DEC);
 //    Serial.print("'");
@@ -81,18 +81,18 @@ void sendData()
   if (msg == "all") {
     Serial.print(Moisture_Value);
     Serial.print(" ");
-    Serial.println(Moisture_Percentage); //" -- all -- "
+    Serial.print(Moisture_Percentage); //" -- all -- "
   }
   else if (msg == "value") {
-    Serial.println(Moisture_Value); //" -- value --"
+    Serial.print(Moisture_Value); //" -- value --"
   }
   else if ( msg == "percentage") {
-    Serial.println(Moisture_Percentage); //"-- percentage --"
+    Serial.print(Moisture_Percentage); //"-- percentage --"
   }
 
   else{
     Serial.print("recieved: ");
-    Serial.println(msg);
+    Serial.print(msg);
   }
 }
 /**********************************************************/
