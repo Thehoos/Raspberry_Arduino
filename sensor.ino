@@ -89,6 +89,11 @@ void sendData()
   else if ( msg == "percentage") {
     Serial.println(Moisture_Percentage); //"-- percentage --"
   }
+
+  else{
+    Serial.print("recieved: ");
+    Serial.println(msg);
+  }
 }
 /**********************************************************/
 

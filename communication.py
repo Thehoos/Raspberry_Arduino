@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# lsusb to check device name
+#dmesg | grep "tty" to find port name
 
 import serial,time
 
@@ -14,6 +18,7 @@ if __name__ == '__main__':
                     cmd=input("Enter command : ")
                     arduino.write(cmd.encode())
                     #time.sleep(0.1) #wait for arduino to answer
+                    print("waiting...")
                     while arduino.inWaiting()==0: pass
                     if  arduino.inWaiting()>0:
                         answer=arduino.readline()
