@@ -18,7 +18,6 @@ const int Water_Value = 350;
 int Moisture_Percentage;
 int Moisture_Value, Prev_Moisture_Value;
 
-String nom = "Arduino";
 String msg;
 
 
@@ -63,32 +62,32 @@ void readSerialPort()
 {
   msg = "";
   delay(10);
-  while (Serial.available() > 0)
-  {
-    msg += (char)Serial.read();
-    Serial.flush();
-    
-    if ( msg == nom ) {
-      Serial.println("OOOOOOOOOOOKKKKKK");
-      Serial.println(nom);
+  if (Serial.available()) {
+
+    while (Serial.available() > 1)
+    {
+      msg += (char)Serial.read();
+      Serial.flush();
     }
-  
+    char x = (char)Serial.read();
+//    Serial.print("'");
+//    Serial.print(x, DEC);
+//    Serial.print("'");
+//    Serial.println();
   }
-
-
-
 }
 void sendData()
 {
   if (msg == "all") {
     Serial.print(Moisture_Value);
-    Serial.println(Moisture_Percentage);
+    Serial.print(" ");
+    Serial.println(Moisture_Percentage); //" -- all -- "
   }
   else if (msg == "value") {
-    Serial.print(Moisture_Value);
+    Serial.println(Moisture_Value); //" -- value --"
   }
   else if ( msg == "percentage") {
-    Serial.print(Moisture_Percentage);
+    Serial.println(Moisture_Percentage); //"-- percentage --"
   }
 }
 /**********************************************************/
@@ -102,23 +101,20 @@ void setup()
 
 void loop()
 {
-  //  Moisture_Value = Calculate_Moist_Value(20, 100);
-  //
-  //  if (Moisture_Value != Prev_Moisture_Value)
-  //  {
-  //    Moisture_Percentage = Calculate_Moisture(Moisture_Value);
-  //    //LcdPrint(Moisture_Percentage, Moisture_Value);
-  //
-  //    Prev_Moisture_Value = Moisture_Value;
-  //  }
+    Moisture_Value = Calculate_Moist_Value(20, 50);
+    Moisture_Percentage = Calculate_Moisture(Moisture_Value);
+
+    if (Moisture_Value > Prev_Moisture_Value + 2 || Moisture_Value < Prev_Moisture_Value - 2)
+    {
+      LcdPrint(Moisture_Percentage, Moisture_Value);
+      Prev_Moisture_Value = Moisture_Value;
+    }
 
   readSerialPort();
   if (msg != "")
   {
-    Serial.print("recieved: ");
-    Serial.print(msg);
+//    Serial.print("recieved: ");
+//    Serial.println(msg);
     sendData();
   }
-  delay(500);
 }
-
