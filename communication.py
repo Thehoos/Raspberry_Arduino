@@ -16,9 +16,15 @@ if __name__ == '__main__':
             try:
                 while True:
                     cmd=input("Enter command : ")
+                    
+                    if (cmd == "q" | cmd == "Q" | cmd == "quit" | cmd == "Quit"){
+                        break
+                    }
+                    
                     arduino.write(cmd.encode())
                     #time.sleep(0.1) #wait for arduino to answer
-                    print("waiting...")
+                    #print("waiting...")
+                    
                     while arduino.inWaiting()==0: pass
                     if  arduino.inWaiting()>0:
                         answer=arduino.readline()
