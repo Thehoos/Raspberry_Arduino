@@ -12,7 +12,7 @@ def writeToFile ( per , val):
 
     stored_data = open("moisture_values.txt", "a")
 
-    stored_data.write("\n" + now + "\t Percentage " + per + "%" + "Value")
+    stored_data.write("\n" + now + "\t Percentage " + per + "%\t" + "Value: " + val)
 
     stored_data.close()
 
