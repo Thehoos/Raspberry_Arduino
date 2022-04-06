@@ -1,1 +1,32 @@
 Date        Time         Percentage      Value
+
+2022/Apr/05 22:16:47     Percentage 67% Value: 379
+2022/Apr/05 22:16:59     Percentage 67% Value: 379
+2022/Apr/05 22:17:12     Percentage 67% Value: 379
+2022/Apr/05 22:17:25     Percentage 67% Value: 380
+2022/Apr/05 22:17:38     Percentage 67% Value: 380
+2022/Apr/05 22:17:51     Percentage 67% Value: 379
+2022/Apr/05 22:18:04     Percentage 67% Value: 379
+2022/Apr/05 22:18:16     Percentage 67% Value: 379
+2022/Apr/05 22:18:29     Percentage 67% Value: 379
+2022/Apr/05 22:18:42     Percentage 67% Value: 379
+2022/Apr/05 22:18:55     Percentage 67% Value: 379
+2022/Apr/05 22:19:07     Percentage 67% Value: 379
+2022/Apr/05 22:19:20     Percentage 67% Value: 379
+2022/Apr/05 22:19:33     Percentage 67% Value: 379
+2022/Apr/05 22:19:46     Percentage 67% Value: 379
+2022/Apr/05 22:19:59     Percentage 67% Value: 379
+2022/Apr/05 22:20:11     Percentage 67% Value: 379
+2022/Apr/05 22:20:24     Percentage 67% Value: 380
+2022/Apr/05 22:20:37     Percentage 67% Value: 379
+2022/Apr/05 22:20:50     Percentage 67% Value: 379
+2022/Apr/05 22:21:03     Percentage 67% Value: 380
+2022/Apr/05 22:21:15     Percentage 67% Value: 379
+2022/Apr/05 22:21:28     Percentage 67% Value: 379
+2022/Apr/05 22:21:41     Percentage 67% Value: 379
+2022/Apr/05 22:21:54     Percentage 67% Value: 380
+2022/Apr/05 22:22:07     Percentage 67% Value: 380
+2022/Apr/05 22:22:19     Percentage 67% Value: 379
+2022/Apr/05 22:22:32     Percentage 67% Value: 379
+2022/Apr/05 22:22:45     Percentage 67% Value: 380
+2022/Apr/05 22:22:58     Percentage 67% Value: 379
