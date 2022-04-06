@@ -39,7 +39,7 @@ if __name__ == '__main__':
                     if  arduino.inWaiting()>0:
                         answer=arduino.readline()
                         answer.decode().split("'")
-                        _percentage = chr(answer[0]) + chr(answer[1]) + chr(answer[2]) 
+                        _percentage = chr(answer[0]) + chr(answer[1]) + '%'
                         print("percentage: " + _percentage)
                         arduino.flushInput() #remove data after reading
                     

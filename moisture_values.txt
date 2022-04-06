@@ -1,4 +1,2 @@
-nothin much
+Date        Time        Value   %
 
-2022/Apr/04 16:38:06	234	95%
-2022/Apr/04 16:38:18	234	95%
