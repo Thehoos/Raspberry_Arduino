@@ -9,8 +9,9 @@ const int Moisture_Sensor = A0;
 
 const int Good_Value = 437;
 
-const int Dry_Value = 484;
-const int Just_watered = 387;
+// Values last modified: April 5th 2022
+const int Dry_Value_Pi = 584;
+const int Water_Value_Pi = 280;
 
 const int Air_Value = 670;
 const int Water_Value = 350;
@@ -27,7 +28,7 @@ int Calculate_Moisture(int Value)
 {
 
   int Percentage;
-  Percentage = map(Value, Dry_Value, Just_watered, 0, 100);
+  Percentage = map(Value, Dry_Value_Pi, Water_Value_Pi, 0, 100);
 
   // Moisture_Percentage -= 10; // cause of the power shortage from supplying lcd display
   return Percentage;
@@ -109,7 +110,8 @@ void loop()
     Moisture_Value = Calculate_Moist_Value(20, 50);
     Moisture_Percentage = Calculate_Moisture(Moisture_Value);
 
-    if (Moisture_Value > Prev_Moisture_Value + 2 || Moisture_Value < Prev_Moisture_Value - 2)
+    //if (Moisture_Value > Prev_Moisture_Value + 2 || Moisture_Value < Prev_Moisture_Value - 2)
+    if ( Moisture_Value != Prev_Moisture_Value)
     {
       LcdPrint(Moisture_Percentage, Moisture_Value);
       Prev_Moisture_Value = Moisture_Value;
