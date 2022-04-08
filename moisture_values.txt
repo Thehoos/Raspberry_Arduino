@@ -30,3 +30,5 @@ Date        Time         Percentage      Value
 2022/Apr/05 22:22:32     Percentage 67% Value: 379
 2022/Apr/05 22:22:45     Percentage 67% Value: 380
 2022/Apr/05 22:22:58     Percentage 67% Value: 379
+                Started
+2022/Apr/05 22:53:25     Percentage 67% Value: 380
