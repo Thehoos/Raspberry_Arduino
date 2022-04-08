@@ -15,7 +15,7 @@ if __name__ == '__main__':
         time.sleep(5) #wait for serial to open
         if arduino.isOpen():
             print("{} connected!".format(arduino.port))
-            text_editor.costum_write("\n\t\tStarted")
+            text_editor.costum_write("\n\t\tStarted\n")
             try:
                 while True:
                     #cmd=input("Enter command : ")
