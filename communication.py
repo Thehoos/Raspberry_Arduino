@@ -4,12 +4,14 @@
 #dmesg | grep "tty" to find port name
 
 import serial,time
+#import RPi.GPIO as GPIO //https://www.youtube.com/watch?v=DPXRemnogC0&list=PLHfdivUFIeEL0ShTTLWGKBOJmgMepLGE3&index=5&ab_channel=AlexanderBaran-Harper
+from gpiozero import LED
 import text_editor
 
 global _value, _percentage
 
 if __name__ == '__main__':
-
+    LED(17).on()
     print('Running. Press CTRL-C to exit.')
     with serial.Serial("/dev/ttyACM0", 9600, timeout=1) as arduino:
         time.sleep(5) #wait for serial to open
@@ -59,4 +61,5 @@ if __name__ == '__main__':
             finally:
                 print("KeyboardInterrupt has been caught.")
                 text_editor.costum_write("\tEnded: " + text_editor.datetime.now().strftime("%Y/%b/%d %H:%M:%S") + "\n")
+                LED(17).off()
                                          
