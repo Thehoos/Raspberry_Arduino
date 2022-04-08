@@ -56,5 +56,7 @@ if __name__ == '__main__':
                     time.sleep(60*60*4)
                     
                         
-            except KeyboardInterrupt:
+            finally:
                 print("KeyboardInterrupt has been caught.")
+                text_editor.costum_write("\tEnded: " + text_editor.datetime.now().strftime("%Y/%b/%d %H:%M:%S") + "\n")
+                                         
