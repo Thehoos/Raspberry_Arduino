@@ -4,8 +4,9 @@
 #dmesg | grep "tty" to find port name
 
 import serial,time
-#import RPi.GPIO as GPIO //https://www.youtube.com/watch?v=DPXRemnogC0&list=PLHfdivUFIeEL0ShTTLWGKBOJmgMepLGE3&index=5&ab_channel=AlexanderBaran-Harper
-from gpiozero import LED
+#import RPi.GPIO as GPIO #https://www.youtube.com/watch?v=DPXRemnogC0&list=PLHfdivUFIeEL0ShTTLWGKBOJmgMepLGE3&index=5&ab_channel=AlexanderBaran-Harper
+from gpiozero import LED #https://www.youtube.com/watch?v=iL_oZGHLHvU&t=1353s&ab_channel=DroneBotWorkshop
+
 import text_editor
 
 global _value, _percentage
